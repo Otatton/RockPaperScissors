@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>Rock Paper Scissors</title>
+<!--
+  Author: otatton
+  Date:   11/26/16
+  Comments: CS 2350 A8 Rock Paper Scissors.
+	Files: RPS.htm, rpsJS.js
+-->
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script language="JavaScript" type="text/javascript" src="rpsJS.js"></script>
+</head>
+<body>
+
+<div id="game">
+<p align="center">Click the play button to start a game, then select your weapon.</br>
+Best 2 out of three wins.</p>
+<p align="center">
+<img alt="Rock" id="rock" name="rock" src="rock.jpg" border="2" />
+<img alt="Paper" id="paper" name="paper" src="paper.jpg" border="2" a/>
+<img alt="Scissors" id="scissors" name="scissors" src="scissors.jpg" border="2" />
+</p>
+<table summary="score" id="table" align="center">
+<tr>
+<td>Win: </td>
+<td id="win">0</td>
+</tr>
+<tr>
+<td><em> VS </em></td>
+</tr>
+<tr>
+<td>Lose: </td>
+<td id="lose">0</td>
+</tr>
+</table>
+<p align="center">
+<img alt="" id="question" src="question.jpg"  border="2" /> </br>
+<input type="button" id="nextRound" value="Play" align="center" />
+</br>
+<p id="info" align="center"></p>
+</p>
+<p align="center">
+<input type="button" id="newGame" value="New Game" align="center" />
+</p>
+</div>
+<div id="result" align="center">
+<img src="" id="gameOver"/>
+
+</div>
+
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var r = document.getElementById("rock");
+var callRock = function(){
+   rps(0);
+	 hide(1, 2);
+	 r.removeEventListener('click', callRock, false);
+   };
+
+var p = document.getElementById("paper");
+var callPaper = function(){
+   rps(1);
+	 hide(0, 2);
+	 p.removeEventListener('click', callPaper, false);
+   };
+
+var s = document.getElementById("scissors");
+var callScissors = function(){
+   rps(2);
+	 hide(0, 1);
+	 p.removeEventListener('click', callScissors, false);
+   };
+
+var button1 = document.getElementById("nextRound");
+var addEvents = function(){
+   r.addEventListener('click', callRock, false);
+	 p.addEventListener('click', callPaper, false);
+	 s.addEventListener('click', callScissors, false);
+	 unHide();
+   };
+button1.addEventListener('click', addEvents, false);
+
+var button2 = document.getElementById("newGame");
+button2.addEventListener('click', reset, false);
+button2.style.visibility = "hidden";
+//-->
+</script>
+
+</body>
+</html>
